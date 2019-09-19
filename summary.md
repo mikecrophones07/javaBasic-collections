@@ -15,3 +15,9 @@ Test1 should_go_through_an_iterator
 2. error will occur if code change will not happen so i just simply base the logic to the document on how to use iterator and run test once and it succeed.
 3. to test whether the iterator logic that i formulate is compatible to the actual result of the test
 4. None
+
+Test2 should_create_a_sequence_without_putting_all_items_into_memory
+1. to know how to create sequence with extends iterator function. Creating a own version of iterator.
+2. error will occur if code change will not happen so i just simple edit the overiding function of iterator and make the iterator function as my some what for loop function without declaring any function of iterator. at first i got error because my logic is not correct and i dont understand the flow of the logic but when i edit again and run it successfully passed the test.
+3. to test whether the my own iterator is doing its function to got the actual result from expected result.
+4. None
