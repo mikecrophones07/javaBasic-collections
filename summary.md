@@ -21,3 +21,9 @@ Test2 should_create_a_sequence_without_putting_all_items_into_memory
 2. error will occur if code change will not happen so i just simple edit the overiding function of iterator and make the iterator function as my some what for loop function without declaring any function of iterator. at first i got error because my logic is not correct and i dont understand the flow of the logic but when i edit again and run it successfully passed the test.
 3. to test whether the my own iterator is doing its function to got the actual result from expected result.
 4. None
+
+Test3 should_predict_linked_list_operation_result
+1. to know how to predict linked list operation result
+2. error will occur if code change will not happen so i just simply base the logic and check all inherited class from the iterator class and derived the answer base on the logic function of the iterator.
+3. to test whether the my own iterator is doing its function to got the actual result from expected result.
+4. None
