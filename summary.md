@@ -27,3 +27,9 @@ Test3 should_predict_linked_list_operation_result
 2. error will occur if code change will not happen so i just simply base the logic and check all inherited class from the iterator class and derived the answer base on the logic function of the iterator.
 3. to test whether the my own iterator is doing its function to got the actual result from expected result.
 4. None
+
+Test5 should_reflects_back_to_original_list_for_sub_range
+1. to know how value will reflect back to the original list base from the sub range
+2. error will occur if code change will not happen so i just read the code and from what i understand, sublist is just getting the range of index and getting the array list base from the range and the sublist clear its value so the array inside integer with specific range was removed so when i run the test once, it succeed.
+3. to test whether the my own iterator is doing its function to got the actual result from expected result.
+4. None
