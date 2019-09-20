@@ -19,6 +19,7 @@ public class DistinctIterable<T> implements Iterable<T> {
     public List<T> toList() {
         ArrayList<T> result = new ArrayList<>();
         this.forEach(result::add);
+
         return result;
     }
 }
@@ -28,19 +29,44 @@ class DistinctIterator<E> implements Iterator<E> {
     // <--start
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final Iterator<E> iterator;
+    private Integer distinct = 2;
+    private Integer distinctCnt = 0;
+    private List<String> temp = new ArrayList<>();
 
     DistinctIterator(Iterator<E> iterator) {
         this.iterator = iterator;
     }
 
+
     @Override
     public boolean hasNext() {
-        throw new NotImplementedException();
+        return distinctCnt != distinct;
     }
 
     @Override
     public E next() {
-        throw new NotImplementedException();
+        E current = iterator.next();
+        if(temp.size() == 0){
+            String tempStr = String.valueOf(current);
+            temp.add(tempStr);
+            distinctCnt++;
+            return current;
+        }
+        else{
+            boolean flag = false;
+            while (!flag) {
+                String tempStr = String.valueOf(current);
+                if(!temp.contains(tempStr)){
+                    temp.add(tempStr);
+                    distinctCnt++;
+                    flag = true;
+                }
+                else {
+                    current = iterator.next();
+                }
+            }
+            return current;
+        }
     }
-    // --end->
+
 }

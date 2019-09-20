@@ -28,6 +28,12 @@ Test3 should_predict_linked_list_operation_result
 3. to test whether the my own iterator is doing its function to got the actual result from expected result.
 4. None
 
+Test4 should_generate_distinct_sequence_on_the_fly
+1. to know how to generate distinct sequence iterator.
+2. error will occur if code change will not happen so just create my own implementations of how to distinct the value inside of billion size of iterator. i failed the test more that 10x because i still finding out how formulate my own logic to distinct the values given in the iterator and own implementation of iterator. So after final logic of iterator it succeed.
+3. to test whether the my own iterator is doing its function to got the actual result from expected result.
+4. None
+
 Test5 should_reflects_back_to_original_list_for_sub_range
 1. to know how value will reflect back to the original list base from the sub range
 2. error will occur if code change will not happen so i just read the code and from what i understand, sublist is just getting the range of index and getting the array list base from the range and the sublist clear its value so the array inside integer with specific range was removed so when i run the test once, it succeed.
