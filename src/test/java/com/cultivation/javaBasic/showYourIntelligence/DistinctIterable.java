@@ -29,9 +29,8 @@ class DistinctIterator<E> implements Iterator<E> {
     // <--start
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final Iterator<E> iterator;
-    private Integer distinct = 2;
-    private Integer distinctCnt = 0;
-    private List<String> temp = new ArrayList<>();
+    private List<String> tempCont = new ArrayList<>();
+    private E current;
 
     DistinctIterator(Iterator<E> iterator) {
         this.iterator = iterator;
@@ -40,33 +39,24 @@ class DistinctIterator<E> implements Iterator<E> {
 
     @Override
     public boolean hasNext() {
-        return distinctCnt != distinct;
+        return validateIteratorFlag();
     }
+
 
     @Override
     public E next() {
-        E current = iterator.next();
-        if(temp.size() == 0){
-            String tempStr = String.valueOf(current);
-            temp.add(tempStr);
-            distinctCnt++;
-            return current;
-        }
-        else{
-            boolean flag = false;
-            while (!flag) {
-                String tempStr = String.valueOf(current);
-                if(!temp.contains(tempStr)){
-                    temp.add(tempStr);
-                    distinctCnt++;
-                    flag = true;
-                }
-                else {
-                    current = iterator.next();
-                }
+        return current;
+    }
+
+    private boolean validateIteratorFlag() {
+        while (iterator.hasNext()) {
+            current = iterator.next();
+            if (!tempCont.contains(String.valueOf(current))) {
+                tempCont.add(String.valueOf(current));
+                return iterator.hasNext();
             }
-            return current;
         }
+        return iterator.hasNext();
     }
 
 }
